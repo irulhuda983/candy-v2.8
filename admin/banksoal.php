@@ -96,8 +96,10 @@ if ($ac == '') :
 					<h3 class='box-title'><i class='fa fa-briefcase'></i> Data Bank Soal</h3>
 					<div class='box-tools pull-right '>
 						<?php if ($setting['server'] == 'pusat') : ?>
+							<?php if($pengawas['level'] == 'admin') :?>
 							<button id='btnhapusbank' class='btn btn-sm btn-danger'><i class='fa fa-trash'></i> <span class='hidden-xs'>Hapus</span></button>
 							<button class='btn btn-sm btn-flat btn-success' data-toggle='modal' data-target='#tambahbanksoal'><i class='glyphicon glyphicon-plus'></i> <span class='hidden-xs'>Tambah Bank Soal</span></button>
+							<?php endif ?>
 						<?php endif ?>
 					</div>
 				</div><!-- /.box-header -->

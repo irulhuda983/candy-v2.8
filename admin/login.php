@@ -132,7 +132,7 @@ if (isset($_POST['submit'])) {
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class='judul'>&copy; <a href="http://candycbt.id" class="txt2 hov1">
+			<div class='judul'>&copy; <a href="https://smkalkyai.sch.id" class="txt2 hov1">
 					<b><?= APLIKASI . " v" . VERSI . " r" . REVISI ?></b>
 				</a>
 			</div>
