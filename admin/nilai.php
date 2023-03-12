@@ -28,7 +28,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
 					<h3 class='box-title'> NILAI <?= $mapel['nama'] ?></h3>
 					<div class='box-tools pull-right btn-grou'>
 						<!-- <button class='btn btn-sm btn-primary' onclick="frames['frameresult'].print()"><i class='fa fa-print'></i> Print</button> -->
-						<a class='btn btn-sm btn-success' href='report_excel.php?m=<?= $id_ujian ?>'><i class='fa fa-download'></i> Download Excel</a>
+						<a class='btn btn-sm btn-success' href='report_excel.php?m=<?= $id_mapel ?>'><i class='fa fa-download'></i> Download Excel</a>
 						<a class='btn btn-sm btn-danger' href='?pg=jadwal'><i class='fa fa-times'></i></a>
 					</div>
 				</div><!-- /.box-header -->

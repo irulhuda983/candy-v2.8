@@ -13,7 +13,7 @@
 	if($mapel['idpk']=='0'){
 		$jurusan='Semua Jurusan';
 	}else{
-		$jurusan=$mapel['idpk'];
+		$jurusan=unserialize($mapel['idpk'])[0];
 	}
 	$guru = fetch($koneksi, 'pengawas',array('id_pengawas'=>$mapel['idguru']));
 	$namasekolah=fetch($koneksi, 'setting');

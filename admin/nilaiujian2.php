@@ -49,7 +49,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
                         <div class="col-md-3">
 
                             <select class="form-control select2 kelas">
-                                <?php $kelas = mysqli_query($koneksi, "select * from siswa a join nilai b on a.id_siswa=b.id_siswa group by a.id_kelas"); ?>
+                                <?php $kelas = mysqli_query($koneksi, "select id_kelas from siswa a join nilai b on a.id_siswa=b.id_siswa group by a.id_kelas"); ?>
                                 <option value=''> Pilih Kelas</option>
                                 <?php while ($kls = mysqli_fetch_array($kelas)) : ?>
                                     <option <?php if ($id_kelas == $kls['id_kelas']) {
@@ -61,7 +61,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
                         </div>
                         <div class="col-md-3">
                             <select class="form-control select2 ujian">
-                                <?php $ujian = mysqli_query($koneksi, "select * from mapel a join nilai b ON a.id_mapel=b.id_mapel group by a.id_mapel"); ?>
+                                <?php $ujian = mysqli_query($koneksi, "select a.id_mapel as id_mapel, a.kode as kode, a.nama as nama from mapel a join nilai b ON a.id_mapel=b.id_mapel group by a.id_mapel"); ?>
                                 <option> Pilih Mata Pelajaran</option>
                                 <?php while ($uj = mysqli_fetch_array($ujian)) : ?>
                                     <option <?php if ($id_mapel == $uj['id_mapel']) {

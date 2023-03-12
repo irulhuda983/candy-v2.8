@@ -31,7 +31,8 @@
                                                 <?php $sql_mapel = mysqli_query($koneksi, "SELECT * FROM ujian group by id_mapel"); ?>
                                                 <option value=''>Pilih Jadwal Ujian</option>
                                                 <?php while ($mapel = mysqli_fetch_array($sql_mapel)) : ?>
-                                                    <option value="<?= $mapel['id_ujian'] ?>"><?php echo "$mapel[nama] $mapel[level] $mapel[id_pk]" ?></option>
+                                                    <?php $id_pk = unserialize($mapel['id_pk']); ?>
+                                                    <option value="<?= $mapel['id_ujian'] ?>"><?php echo "$mapel[nama] $mapel[level] $idpk" ?></option>
                                                 <?php endwhile ?>
                                             </select>
                                         </div>
