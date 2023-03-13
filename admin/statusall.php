@@ -18,7 +18,7 @@ while ($nilai = mysqli_fetch_array($nilaiq)) {
     $tglx = strtotime($nilai['ujian_mulai']);
     $tgl = date('Y-m-d', $tglx);
     $tglsekarang = date('Y-m-d');
-    echo "<tr><td id='tanggal'>".($tgl == $tglsekarang)."</td></tr>";
+    // echo "<tr><td id='tanggal'>".($tgl == $tglsekarang)."</td></tr>";
     if ($tgl == $tglsekarang) {
         $no++;
         $ket = '';
