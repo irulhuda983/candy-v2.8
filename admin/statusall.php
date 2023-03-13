@@ -9,7 +9,6 @@ if (!isset($_GET['id'])) {
 include "../config/config.default.php";
 include "../config/config.function.php";
 $pengawas = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM pengawas  WHERE id_pengawas='$_SESSION[id_pengawas]'"));
-$tglsekarang = date('Y-m-d');
 if ($pengawas['level'] == 'admin') {
     $nilaiq = mysqli_query($koneksi, "SELECT *  FROM nilai s LEFT JOIN ujian c ON s.id_ujian=c.id_ujian  where c.status='1' and s.id_siswa<>'' GROUP by s.id_nilai DESC");
 } else {
@@ -18,7 +17,8 @@ if ($pengawas['level'] == 'admin') {
 while ($nilai = mysqli_fetch_array($nilaiq)) {
     $tglx = strtotime($nilai['ujian_mulai']);
     $tgl = date('Y-m-d', $tglx);
-    $tgl_sekarang = date('Y-m-d');
+    $tglsekarang = date('Y-m-d');
+    echo "<tr><td>".($tgl == $tglsekarang)."</td></tr>";
     if ($tgl == $tglsekarang) {
         $no++;
         $ket = '';
