@@ -5,7 +5,7 @@ $tglsekarang = date('Y-m-d');
 $id = $_GET['id'];
 $idu = $_GET['idu'];
 
-$nilaiq = mysqli_query($koneksi, "SELECT *  FROM nilai  s LEFT JOIN ujian c ON s.id_mapel=c.id_mapel  where c.status='1' and s.id_siswa<>'' and s.id_mapel='$id' and s.id_ujian='$idu' GROUP by s.id_nilai DESC");
+$nilaiq = mysqli_query($koneksi, "SELECT *  FROM nilai s LEFT JOIN ujian c ON s.id_mapel=c.id_mapel  where c.status='1' and s.id_siswa<>'' and s.id_mapel='$id' and s.id_ujian='$idu' GROUP by s.id_nilai ORDER BY s.id_nilai DESC");
 while ($nilai = mysqli_fetch_array($nilaiq)) {
 
 	$tglx = strtotime($nilai['ujian_mulai']);
