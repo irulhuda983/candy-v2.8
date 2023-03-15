@@ -28,7 +28,7 @@
                                         <div class='form-group'>
                                             <label>Nama Ujian</label>
                                             <select name="id_ujian" class='select2 form-control' style="width: 100%" required='true'>
-                                                <?php $sql_mapel = mysqli_query($koneksi, "SELECT * FROM ujian group by id_mapel"); ?>
+                                                <?php $sql_mapel = mysqli_query($koneksi, "SELECT * FROM ujian"); ?>
                                                 <option value=''>Pilih Jadwal Ujian</option>
                                                 <?php while ($mapel = mysqli_fetch_array($sql_mapel)) : ?>
                                                     <?php $id_pk = unserialize($mapel['id_pk']); ?>

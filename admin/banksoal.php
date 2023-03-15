@@ -1012,7 +1012,9 @@ if ($ac == '') :
 											<?php endwhile; ?>
 										</tbody>
 									</table>
+									<?php if ($namamapel['jml_esai'] > 0) : ?>
 									<b>B. Soal Essai</b>
+									<?php endif; ?>
 									<table class='table table-bordered table-striped'>
 										<tbody>
 											<?php $soalq = mysqli_query($koneksi, "SELECT * FROM soal where id_mapel='$id_mapel' and jenis='2' order by nomor "); ?>
