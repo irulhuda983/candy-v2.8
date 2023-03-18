@@ -1205,7 +1205,7 @@ $tglsekarang = time();
 
             function jawabsoal(idmapel, idsiswa, idsoal, jawab, jawabQ, jenis, idu) {
 
-                console.log(idmapel + '-' + idsiswa + '-' + idsoal + '-' + jawab + '-' + jawabQ + '-' + jenis + '-' + idu)
+                // console.log(idmapel + '-' + idsiswa + '-' + idsoal + '-' + jawab + '-' + jawabQ + '-' + jenis + '-' + idu)
                 $.ajax({
                     type: 'POST',
                     url: homeurl + '/soal.php',
@@ -1219,8 +1219,12 @@ $tglsekarang = time();
                         idu: idu,
                         jawabx: jawabQ
                     },
+                    error: function(xhr, status, error) {
+                        var err = eval("(" + xhr.responseText + ")");
+                        console.log(err.Message);
+                    },
                     success: function(response) {
-                        //console.log(response);
+                        console.log(response);
                         if (response == 'OK') {
                             $('#nomorsoal #badge' + idsoal).removeClass('bg-gray');
                             $('#nomorsoal #badge' + idsoal).removeClass('bg-yellow');
