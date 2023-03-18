@@ -1058,8 +1058,12 @@ $tglsekarang = time();
                         beforeSend: function() {
                             $('.loader').css('display', 'block');
                         },
+                        error: function(xhr, status, error) {
+                            var err = eval("(" + xhr.responseText + ")");
+                            console.log(err.Message);
+                        },
                         success: function(response) {
-                           
+                            console.log(response)
                             $('.loader').css('display', 'none');
                             location.href=homeurl;
                            
