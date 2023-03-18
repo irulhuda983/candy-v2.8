@@ -1205,7 +1205,7 @@ $tglsekarang = time();
 
             function jawabsoal(idmapel, idsiswa, idsoal, jawab, jawabQ, jenis, idu) {
 
-                //console.log(idmapel + '-' + idsiswa + '-' + idsoal + '-' + jawab + '-' + jawabQ + '-' + jenis + '-' + idu)
+                console.log(idmapel + '-' + idsiswa + '-' + idsoal + '-' + jawab + '-' + jawabQ + '-' + jenis + '-' + idu)
                 $.ajax({
                     type: 'POST',
                     url: homeurl + '/soal.php',
