@@ -80,6 +80,7 @@ $data = array(
 $simpan = update($koneksi, 'nilai', $data, $where);
 echo mysqli_error($koneksi);
 if ($simpan) {
-    delete($koneksi, 'jawaban', $where);
+    echo "selesai";
+    // delete($koneksi, 'jawaban', $where);
 }
 mysqli_query($koneksi, "INSERT INTO log (id_siswa,type,text,date) VALUES ('$ids','login','Selesai Ujian','$tanggal $waktu')");
