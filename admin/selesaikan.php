@@ -65,6 +65,8 @@ foreach ($ceksoal as $getsoal) {
 	// 	$salah++;
 	// }
 }
+
+
 $bagi = $mapel['jml_soal'] / 100;
 $bobot = $mapel['bobot_pg'] / 100;
 $skor = ($benar / $bagi) * $bobot;
@@ -78,9 +80,11 @@ $data = array(
 	'jawaban' => serialize($arrayjawab),
 	'jawaban_esai' => serialize($arrayjawabesai)
 );
+
 $simpan = update($koneksi, 'nilai', $data, $where);
 echo mysqli_error($koneksi);
 if ($simpan) {
-	delete($koneksi, 'jawaban', $where);
+	echo "selesai";
+	// delete($koneksi, 'jawaban', $where);
 }
 mysqli_query($koneksi, "INSERT INTO log (id_siswa,type,text,date) VALUES ('$ids','login','Selesai Ujian','$tanggal $waktu')");
