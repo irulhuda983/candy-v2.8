@@ -3,3 +3,4 @@
 admin/backup_soal/
 /config/config.candy.php
 /config/config.database.php
+.DS_Store
