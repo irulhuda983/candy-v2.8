@@ -1,0 +1,51 @@
+services:
+  app:
+    build: .
+    container_name: cbt_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - db
+    networks:
+      - cbt_network
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: cbt_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - cbt_network
+
+  db:
+    image: mariadb:10.5
+    container_name: cbt_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ecandy28r3
+      MYSQL_USER: smkalkyai
+      MYSQL_PASSWORD: lalisandi12
+    volumes:
+      - db_data:/var/lib/mysql
+    command: >
+      --innodb-buffer-pool-size=256M
+      --max-connections=50
+    ports:
+      - "3306:3306"
+    networks:
+      - cbt_network
+
+volumes:
+  db_data:
+
+networks:
+  cbt_network:

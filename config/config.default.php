@@ -19,12 +19,17 @@ error_reporting(0);
 //HAPUS SAMPAI SINI
 
 //JIKA DIINSTAL DISUBDOMAIN HOSTING HAPUS TANDA // BARIS DIBAWAH INI
-require "config.candy.php";
 $uri = $_SERVER['REQUEST_URI'];
 $pageurl = explode("/",$uri);
 
-// $homeurl = "http://".$_SERVER['HTTP_HOST'];
-$homeurl = APPURL;
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') 
+    || $_SERVER['SERVER_PORT'] == 443 
+    ? "https://" 
+    : "http://";
+
+$homeurl = $protocol . $_SERVER['HTTP_HOST'];
+
+// $homeurl = APPURL;
 (isset($pageurl[1])) ? $pg = $pageurl[1] : $pg = '';
 (isset($pageurl[2])) ? $ac = $pageurl[2] : $ac = '';
 (isset($pageurl[3])) ? $id = $pageurl[3] : $id = 0;
