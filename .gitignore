@@ -1,5 +1,6 @@
 
 *.png
+!plugins/tinymce/plugins/formula/img/*.png
 admin/backup_soal/
 /config/config.candy.php
 /config/config.database.php
