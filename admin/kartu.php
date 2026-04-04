@@ -3,6 +3,15 @@
 		position: absolute;
 		z-index: -1;
 	}
+	@media print {
+		@page {
+			size: auto;   /* auto is the initial value */
+			margin: 0;  /* this affects the margin in the printer settings */
+		}
+		body {
+			margin: 0;
+		}
+	}
 </style>
 <?php
 require("../config/config.default.php");
@@ -43,7 +52,7 @@ $kelas = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE id
 	}
 </style>
 
-<table width='100%' align='center' cellpadding='10'>
+<table width='100%' align='center' cellpadding='2'>
 	<tr>
 		<?php $siswaQ = mysqli_query($koneksi, "SELECT * FROM siswa WHERE id_kelas='$id_kelas' ORDER BY nama ASC"); ?>
 		<?php while ($siswa = mysqli_fetch_array($siswaQ)) : ?>
