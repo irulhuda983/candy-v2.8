@@ -28,6 +28,16 @@ $kelas = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE id
 		font-size: x-small;
 	}
 
+	@page {
+    size: A4;
+    margin: 10mm;
+	}
+
+	body {
+			margin: 0;
+			padding: 0;
+	}
+
 	.box {
 		border: 1px solid #000;
 		width: 100%;
