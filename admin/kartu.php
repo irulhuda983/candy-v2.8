@@ -107,7 +107,7 @@ $kelas = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE id
 						</tr>
 						<tr>
 							<td class="ukuran" valign='top' width="30%">No Peserta</td>
-							<td class="ukuran" valign='top'>: <?= $siswa['no_peserta'] ?></td>
+							<td class="ukuran2" valign='top'>: <?= $siswa['no_peserta'] ?></td>
 						</tr>
 						<tr>
 							<td class="ukuran" valign='top'>Nama</td>
