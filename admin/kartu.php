@@ -3,15 +3,7 @@
 		position: absolute;
 		z-index: -1;
 	}
-	@media print {
-		@page {
-			size: auto;   /* auto is the initial value */
-			margin: 0;  /* this affects the margin in the printer settings */
-		}
-		body {
-			margin: 0;
-		}
-	}
+
 </style>
 <?php
 require("../config/config.default.php");
