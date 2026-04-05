@@ -28,7 +28,7 @@ $kelas = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE id
 		font-size: x-small;
 	}
 
-	@page {
+	/* @page {
     size: A4;
     margin: 10mm;
 	}
@@ -36,7 +36,7 @@ $kelas = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE id
 	body {
 			margin: 0;
 			padding: 0;
-	}
+	} */
 
 	.box {
 		border: 1px solid #000;
@@ -54,7 +54,7 @@ $kelas = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE id
 	}
 </style>
 
-<table width='100%' align='center' cellpadding='2'>
+<table width='100%' align='center' cellpadding='10'>
 	<tr>
 		<?php $siswaQ = mysqli_query($koneksi, "SELECT * FROM siswa WHERE id_kelas='$id_kelas' ORDER BY nama ASC"); ?>
 		<?php while ($siswa = mysqli_fetch_array($siswaQ)) : ?>
